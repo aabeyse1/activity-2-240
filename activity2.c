@@ -1,3 +1,5 @@
+// Arnika Abeysekera
+
 #include <stdio.h>        // printf
 #include <assert.h>       // assert
 #include <limits.h>       // named constants for min, max of C integer data types
@@ -5,7 +7,7 @@
 
 float sales_example(float item_cost, unsigned short num_items, float tax);
 
-// TODO: (Task 2) Put declaration of loop_example here
+void loop_example();
 
 void utype_sizes();
 
@@ -22,6 +24,7 @@ int main() {
 
     // TASK 2: loop experiment
     // TODO: place function call here
+    loop_example();
 
     // TASK 3: unsigned integer types, sizes, and maximums
     utype_sizes();
@@ -33,17 +36,37 @@ int main() {
 }
 
 
-/** TODO TASK 1:
-    * Complete the function below to implement the simple sales example
-    */
+// TASK 1:
 float sales_example(float item_cost, unsigned short num_items, float tax) {
-    // TODO: Complete this definition (removing the default return)
-    return 0.0;
+    float pre_tax = item_cost * num_items;
+    float total_cost = (pre_tax * tax) + pre_tax;
+    if (tax == 0.0) {
+        printf("No tax applied");
+    }
+    return total_cost;
 }
 
-/** TODO TASK 2:
-    * Create your loop_example function here
-    */
+// TASK 2:
+void loop_example() {
+    for (int i=10; i<26; i=i+5) {
+        printf("%d \n", i);
+        printf("%d \n", i*i);
+    }
+
+    int i = 10;
+    while(i<26) {
+        printf("%d \n", i);
+        printf("%d \n", i*i);
+        i=i+5;
+    }
+
+    int j = 10;
+    do {
+        printf("%d \n", j);
+        printf("%d \n", j*j);
+        j=j+5;
+    } while(j<26);
+}
 
 /** TODO TASK 3:
     * Add print statements to print the max values and sizes of each unsigned
