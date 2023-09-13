@@ -11,7 +11,7 @@ void loop_example();
 
 void utype_sizes();
 
-// TODO: (Task 4) Put declaration of stype_sizes here
+void stype_sizes();
 
 
 
@@ -20,17 +20,15 @@ int main() {
     float total1;
     total1 = sales_example(3.94, 4, 0.06);
     printf("Total1 = $%.2f\n", total1);
-    // TODO: Test on multiple calls, then add assert statements here
 
     // TASK 2: loop experiment
-    // TODO: place function call here
     loop_example();
 
     // TASK 3: unsigned integer types, sizes, and maximums
     utype_sizes();
 
     // TASK 4: signed integer types, sizes, mins and maxs
-    // TODO: place function call here
+    stype_sizes();
 
     return 0;
 }
@@ -68,17 +66,38 @@ void loop_example() {
     } while(j<26);
 }
 
-/** TODO TASK 3:
-    * Add print statements to print the max values and sizes of each unsigned
-    * integer type (short, int, long), based on the example of unsigned char.
-    */
+// TODO TASK 3:
 void utype_sizes() {
 	printf("unsigned char | max: %hu | size: %zu\n", 
            (unsigned char) UCHAR_MAX, 
            sizeof(unsigned char));
+    printf("unsigned short | max: %hu | size: %zu\n", 
+            (unsigned short) USHRT_MAX, 
+            sizeof(unsigned short));
+    printf("unsigned int | max: %u | size: %zu\n", 
+           (unsigned int) UINT_MAX, 
+           sizeof(unsigned int));
+    printf("unsigned long | max: %lu | size: %zu\n", 
+            (unsigned long) ULONG_MAX, 
+            sizeof(unsigned long));
 }
 
-/** TODO TASK 4:
-    * Create your stype_sizes function here to print min/max values and sizes of 
-    * signed integer types: char, short, int, long
-    */
+// TASK 4:
+void stype_sizes() {
+	printf("char | max: %hhi | min: %hhi | size: %zu\n", 
+           SCHAR_MAX, 
+           SCHAR_MIN,
+           sizeof(char));
+    printf("short | max: %hi | min: %hi | size: %zu\n", 
+           SHRT_MAX, 
+           SHRT_MIN,
+           sizeof(short));
+    printf("int | max: %d | min: %d | size: %zu\n", 
+           INT_MAX, 
+           INT_MIN,
+           sizeof(int));
+    printf("long | max: %li | min: %li | size: %zu\n", 
+           LONG_MAX, 
+           LONG_MIN,
+           sizeof(long));
+}
